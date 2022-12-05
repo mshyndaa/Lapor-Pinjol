@@ -1,0 +1,49 @@
+﻿@model LaporPinjol.Models.Report
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Form Lapor Pinjol</h1>
+
+<p>Please enter your details below!</p>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="LoanCompanyName" class="control-label">Nama Pinjaman Online</label>
+                <input asp-for="LoanCompanyName" class="form-control" />
+                <span asp-validation-for="LoanCompanyName" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="LoanCompanyBankAccount" class="control-label">No Rekening Pinjol</label>
+                <input asp-for="LoanCompanyBankAccount" class="form-control" />
+                <span asp-validation-for="LoanCompanyBankAccount" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="LoanCompanyPhoneNumber" class="control-label">No Telepon Pinjol</label>
+                <input asp-for="LoanCompanyPhoneNumber" class="form-control" />
+                <span asp-validation-for="LoanCompanyPhoneNumber" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="EvidenceLinkOnCloudStorage" class="control-label">* Bukti Pendukung</label>
+                <input asp-for="EvidenceLinkOnCloudStorage" class="form-control" />
+                <span asp-validation-for="EvidenceLinkOnCloudStorage" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Proceed" class="btn btn-primary" />
+            </div>
+            <br />
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

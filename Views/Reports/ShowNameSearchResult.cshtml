@@ -1,0 +1,49 @@
+﻿@model IEnumerable<LaporPinjol.Models.Report>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Daftar Pinjol Dalam Investigasi</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nama Pinjaman Online
+            </th>
+            <th>
+                No Rekening Pinjol
+            </th>
+            <th>
+                No Telepon Pinjol
+            </th>
+            <th>
+                Tanggal Pelaporan
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            @if (item.VerificationStatus == ReportStatus.Investigated)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LoanCompanyName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LoanCompanyBankAccount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LoanCompanyPhoneNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SubmissionDate)
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

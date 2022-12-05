@@ -1,0 +1,36 @@
+﻿body {
+}
+
+.index_footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 0px 8px 0px;
+}
+
+.contact_us {
+    display: block;
+    align-items: center;
+}
+
+    .contact_us a {
+        text-decoration: none;
+    }
+
+    .contact_us a:hover {
+        text-decoration: none;
+    }
+
+    .contact_us a:visited:active {
+        text-decoration: none;
+    }
+
+    .contact_us a:link {
+        text-decoration: none;
+    }
+
+.social_media_icon {
+    height: 30px;
+    width: 30px;
+    margin: 0px 8px 0px 8px;
+}

@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Search";
+}
+
+<h1>Search By Bank Account Form</h1>
+
+<p>Please enter your keyword below!</p>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="ShowBankAccountSearchResult">
+            <div class="form-group">
+                <label for="SearchPhrase" class="control-label">No Rekening Pinjol</label>
+                <input name="SearchPhrase" class="form-control" />
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Search" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

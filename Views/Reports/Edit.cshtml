@@ -1,0 +1,64 @@
+﻿@model LaporPinjol.Models.Report
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Report</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ReportId" />
+            <div class="form-group">
+                <label asp-for="UserId" class="control-label"></label>
+                <input asp-for="UserId" class="form-control" />
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LoanCompanyName" class="control-label"></label>
+                <input asp-for="LoanCompanyName" class="form-control" />
+                <span asp-validation-for="LoanCompanyName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LoanCompanyBankAccount" class="control-label"></label>
+                <input asp-for="LoanCompanyBankAccount" class="form-control" />
+                <span asp-validation-for="LoanCompanyBankAccount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LoanCompanyPhoneNumber" class="control-label"></label>
+                <input asp-for="LoanCompanyPhoneNumber" class="form-control" />
+                <span asp-validation-for="LoanCompanyPhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EvidenceLinkOnCloudStorage" class="control-label"></label>
+                <input asp-for="EvidenceLinkOnCloudStorage" class="form-control" />
+                <span asp-validation-for="EvidenceLinkOnCloudStorage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VerificationStatus" class="control-label"></label>
+                <select asp-for="VerificationStatus" class="form-control"></select>
+                <span asp-validation-for="VerificationStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SubmissionDate" class="control-label"></label>
+                <input asp-for="SubmissionDate" class="form-control" />
+                <span asp-validation-for="SubmissionDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

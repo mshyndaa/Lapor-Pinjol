@@ -1,0 +1,42 @@
+﻿@model IEnumerable<LaporPinjol.Models.Report>
+
+@{
+    ViewData["Title"] = "Status";
+}
+
+<h1>History Laporan</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nama Pinjaman Online
+            </th>
+            <th>
+                Status
+            </th>
+            <th>
+                Tanggal Pelaporan
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoanCompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VerificationStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubmissionDate)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.ReportId">Details</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
